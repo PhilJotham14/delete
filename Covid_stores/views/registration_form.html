@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="/registration_form.css">
+    </head>
+    <body>
+        <div class="regform"><h1>Registration Form</h1></div>
+        <div class="main">
+            <form id="registrationf" name="mydata" action="/registration/registration" method="POST">
+                <div id="name">
+                    <h2 class="name">Name</h2>
+                    <input class="firstname" type="text" name="first_name" id="firstname"><br>
+                    <label class="firstlabel">first name</label>
+                    <input class="lastname" type="text" name="last_name" id="lastname">
+                    <label class="lastlabel">last name</label>
+                </div>
+
+                <h2 class="name">Company</h2>
+                <input class="company" type="text" name="company" id="company">
+
+                <h2 class="name">Email</h2>
+                <input class="email" type="text" name="email" id="email">
+
+                <h2 class="name">Phone</h2>
+                <input class="code" type="text" name="area-code" id="area_code">
+                <label for="areacode" class="area-code">Area Code</label>
+                <input class="number" type="text" name="phone" id="phonenumber">
+                <label for="num" class="phone_number">Phone Number</label>
+
+                <h2 class="name">Address</h2>
+                <input type = "text" name = "address" class = "address" id="address"><br>
+
+                <h2 class="name">National ID</h2>
+                <input class="idcharacters" type="text" name="idcharacters" id="idcharacters">
+                <label for="firstid" class="idcharacterstxt">First 3 ID characters</label>
+                <input class="idnum" type="number" name="idnum" id="idnum">
+                <label class="idnumber">Numbers</label>
+                <input class="idcharacterstwo" type="text" name="idcharacterstwo" id="idcharacterstwo">
+                <label class="idcharacterstxttwo">Other ID</label>
+
+                <h2 class="name">Employee ID</h2>
+                <input class="employee" type="text" name="employee" id="employee">
+                
+                <button type="submit" value="submit">Register</button>
+
+            </form>
+        </div>
+        <script src="/validateRegistration.js"></script>
+    </body>
+</html>
