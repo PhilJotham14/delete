@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <link rel="stylesheet" type="text/css" href="/css/bootstrap/css/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="carousel/infinite-slider.css">
+    <link rel="stylesheet" type="text/css" href="/purchaseform.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <title>COVID STORES</title>
+  </head>
+ 
+  <body>
+    <div w3-include-html="/includes/nav.html"></div>
+    <main id="main">
+        <section id="left">
+            <div id="head">
+                <h1>Life has great moments</h1>
+                <p>Enjoy them with music!</p>
+            </div>
+            <h3>Only 9.99$</h3>
+        </section>
+        <section id="right">
+            <h1>Purchase</h1>
+            <!-- You named  it purchase idd so as not to confuse it with id. -->
+            <form id="purchaseidd" name="#" action="/purchase/purchase" method="POST">
+                <div id="form-card" class="form-field">
+                    <label for="customername">Customer Name</label>
+                    <input id="customername" name="username" maxlength="15" placeholder="#" required>
+                    <label for="location">Location</label>
+                    <input id="location" name="location"  placeholder="#" required>
+                </div>
+
+                <div id="form-card" class="form-field">
+                    <label for="phonenumber">Phone Number</label>
+                    <input id="phonenumber" name="phonenumber" type="number" maxlength="10" placeholder="#" required>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" placeholder="#" required>
+                </div>
+
+                <div id="form-card" class="form-field">
+                    <label for="initialpay">Initial Pay</label>
+                    <input id="initialpay" class="amountdecimal" name="initialpay" type="number" placeholder="#" required>
+                    <label for="nationalid">National ID</label>
+                    <input id="nationalid" name="nationalid" maxlength="#" placeholder="#" required>
+                </div>
+
+                <div id="form-card" class="form-field">
+                    <label for="itemname">Item Name</label>
+                    <input id="itemname" name="itemname" type="text" placeholder="#" required>
+                    <label for="serialnumber">Item Serial Number</label>
+                    <input id="serialnumber" name="serialnumber" maxlength="#" placeholder="#" required>
+                </div>
+
+                <div id="form-card" class="form-field">
+                    <label for="dateofpay">Date of Pay</label>
+                    <input id="dateofpay" name="dateofpay" type="text" placeholder="#" required>
+                    <label for="nextdate">Next Date of Payment</label>
+                    <input id="nextdate" name="nextdate" maxlength="#" placeholder="#" required>
+                    <label for="amountnext">Amount Next Payable</label>
+                    <input id="amountnext" class="amountdecimal" name="amountnext" maxlength="#" placeholder="#" required>
+                </div>
+
+                <div id="form-card" class="form-field">
+                    <label for="refereenum">Referee Number</label>
+                    <input id="refereenum" name="refereenum" type="number" placeholder="#" required>
+                    <label for="receipt">Purchase Receipt</label>
+                    <input id="receipt" name="receipt" maxlength="#" placeholder="#" required>
+                </div>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="/purchaseform.js"></script>
+</body>
+</html>

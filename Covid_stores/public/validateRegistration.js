@@ -1,9 +1,6 @@
 document.getElementById("registrationf").addEventListener("submit", e => {
     e.preventDefault();
 
-//     validate();
-//  }
-
 var validateRegistration = () => {
     var firstname = document.mydata.firstname;
     var lastname = document.mydata.lastname;
@@ -58,8 +55,8 @@ var validateRegistration = () => {
     }
         
     var area = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-    if (!areacode.value.match(area)) {
-        areacode.style.border = '5px solid blue'
+    if (!area_code.value.match(area)) {
+        area_code.style.border = '5px solid blue'
         alert("Area code should only be integers")
     }
 

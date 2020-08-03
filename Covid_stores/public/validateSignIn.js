@@ -1,7 +1,6 @@
 document.getElementById("signi").addEventListener("submit", e => {
     e.preventDefault();
 
-
 var validatesignin = () => {
     var email = document.mydata.email;
     var password = document.mydata.password;

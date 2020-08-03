@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Sign Up Form</title>
+        <link rel="stylesheet" href="/signUpStyle.css">
+    </head>
+    <body>
+        <div class="sign-up-form">
+            <img src="img/editicon.png"><i class="fa fa-user-plus" aria-hidden="true"></i>
+            <h1>Sign Up Now</h1>
+            <form id="managersignu" name="mydata" action="/managersignup/managersignup" method="POST">
+                <input type="email" class="input-box" placeholder="Your Email" name="username">
+                <input type="password" class="input-box" placeholder="Your Passowrd" name="password">
+                <p><span><input type="checkbox"></span>I agree to the terms and services</p>
+                <!-- <button type="button" class="signup-btn" onclick= 'validatesignup()'>Sign up</button> -->
+                <button type="submit" class="signup-btn" value="submit" >Sign up</button>
+                <hr>
+                <p class="or">OR</p>
+                <p>Do you have an account ? <a href="/managersignin/managersignin">Sign in</a></p>
+                <button></button>
+            </form>
+        </div>
+        <!-- <script src="/public/validateSignUp.js"></script> -->
+    </body>
+</html>

@@ -1,0 +1,47 @@
+extends layout
+block content
+    header.card-header
+        h4.card-title Added Products Table
+        |&nbsp
+    div.form-row
+        div.col.form-group.col-md-12    
+            form.search(action='/addproduct/addproductform' enctype="multipart/form-data")
+                div.form-row
+                    div.col-md-8
+                        input.form-control(name='payinterval' placeholder="Enter your search term ...")
+                    div.col-md-4
+                        input.btn.btn-dark.btn-block(type="submit")
+    table.table
+        thead.thead-dark
+            tr
+                th Name of the Item
+                th Make
+                th Category
+                th Date of Entry
+                th Serial Number
+                th Price
+                th Initial Pay
+                th Pay Interval
+                th Product Description
+                th Upload Image
+                th Color
+                th 
+        tbody
+            each product in products
+                tr
+                    td #{product.username}
+                    td #{product.make}
+                    td #{product.category}
+                    td #{product.date}
+                    td #{product.serialnumber}
+                    td #{product.price}
+                    td #{product.initialpay}
+                    td #{product.payinterval}
+                    td #{product.productdescription}
+                    td
+                        img(src=product.uploadimage, alt="", srcset="" width="100")
+                    td #{product.color}
+                    td
+                        form(method="post" action='/addproduct/delete')
+                            input(type="hidden", placeholder="", name="id", value=product._id)
+                            button.btn.btn-dark.btn-block(type="submit") Delete
