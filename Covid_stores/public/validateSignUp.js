@@ -8,7 +8,7 @@ var validatesignup = () => {
         return false
     }
     if (password.value.length==""){
-        password.style.border = '5px solid green'
+        password.style.border = '5px solid red'
         alert("Password cannot be left empty")
         return false
     }

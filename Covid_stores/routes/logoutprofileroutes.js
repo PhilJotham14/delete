@@ -1,19 +1,14 @@
 const express=require('express');
 const mongoose=require('mongoose');
 const router=express.Router();
+const passport = require('passport');
 
 var view = "./views/"
 
-router.post('/logout', (req, res) => {
-    if (req.session) {
-        req.session.destroy(function (err) {
-            if (err) {
-                // failed to destroy session
-            } else {
-                return res.redirect('/logout/logout');
-            }
+router.get('/logout', (req, res) => {
+                req.logout() 
+                res.redirect('/');
         })
-    }  
-  })
+
   
   module.exports=router;

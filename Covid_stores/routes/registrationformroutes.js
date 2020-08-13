@@ -43,8 +43,8 @@ router.get('/registration', (req, res) => {
 router.get('/userlist', async (req, res) => {
   try {
     let items = await Registration.find()
-    if (req.query.gender) {
-      items = await Registration.find({ gender: req.query.gender })
+    if (req.query.email) {
+      items = await Registration.find({ email: req.query.email })
     }
     res.render('list', { users: items })
   } catch (err) {

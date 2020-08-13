@@ -10,7 +10,7 @@
             <form id="registrationf" name="mydata" action="/registration/registration" method="POST">
                 <div id="name">
                     <h2 class="name">Name</h2>
-                    <input class="firstname" type="text" name="first_name" id="firstname"><br>
+                    <input class="firstname" type="text" name="username" id="firstname"><br>
                     <label class="firstlabel">first name</label>
                     <input class="lastname" type="text" name="last_name" id="lastname">
                     <label class="lastlabel">last name</label>
@@ -23,29 +23,29 @@
                 <input class="email" type="text" name="email" id="email">
 
                 <h2 class="name">Phone</h2>
-                <input class="code" type="text" name="area_code" id="area_code">
+                <input class="code" type="text" name="area_code" id="area_code" required>
                 <label for="areacode" class="area-code">Area Code</label>
                 <input class="number" type="text" name="phone" id="phonenumber">
-                <label for="num" class="phone_number">Phone Number</label>
+                <label for="num" class="phone_number">Phone Number</label required>
 
                 <h2 class="name">Address</h2>
                 <input type = "text" name = "address" class = "address" id="address"><br>
 
                 <h2 class="name">National ID</h2>
-                <input class="idcharacters" type="text" name="idcharacters" id="idcharacters">
+                <input class="idcharacters" type="text" name="idcharacters" id="idcharacters" required>
                 <label for="firstid" class="idcharacterstxt">First 3 ID characters</label>
-                <input class="idnum" type="number" name="idnum" id="idnum">
+                <input class="idnum" type="number" name="idnum" id="idnum" required>
                 <label class="idnumber">Numbers</label>
-                <input class="idcharacterstwo" type="text" name="idcharacterstwo" id="idcharacterstwo">
+                <input class="idcharacterstwo" type="text" name="idcharacterstwo" id="idcharacterstwo" required>
                 <label class="idcharacterstxttwo">Other ID</label>
 
                 <h2 class="name">Employee ID</h2>
                 <input class="employee" type="text" name="employee" id="employee">
                 
-                <button type="submit" value="submit" onclick= 'validateRegistration()'>Register</button>
+                <button type="submit" value="submit" onclick='return validateRegistration()'>Register</button>
 
             </form>
         </div>
-        <script src="/public/validateRegistration.js"></script>
+        <script src="/validateRegistration.js"></script>
     </body>
 </html>

@@ -8,7 +8,7 @@ block content
             form.search(action='/addproduct/addproductform' enctype="multipart/form-data")
                 div.form-row
                     div.col-md-8
-                        input.form-control(name='payinterval' placeholder="Enter your search term ...")
+                        input.form-control(name='category' placeholder="Enter your search term(category) ...")
                     div.col-md-4
                         input.btn.btn-dark.btn-block(type="submit")
     table.table
@@ -25,7 +25,8 @@ block content
                 th Product Description
                 th Upload Image
                 th Color
-                th 
+                th
+                th  
         tbody
             each product in products
                 tr
@@ -45,3 +46,6 @@ block content
                         form(method="post" action='/addproduct/delete')
                             input(type="hidden", placeholder="", name="id", value=product._id)
                             button.btn.btn-dark.btn-block(type="submit") Delete
+                    td
+                        a(href='/addproduct/edit/'+product._id)
+                            button.btn.btn-dark.btn-block(type="submit") Update

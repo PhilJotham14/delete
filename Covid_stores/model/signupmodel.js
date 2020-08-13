@@ -8,7 +8,6 @@ const signupsSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    required: 'Please Enter password'
   },
 });
 signupsSchema.plugin(passportLocalMongoose, {

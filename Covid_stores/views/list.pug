@@ -1,14 +1,14 @@
 extends layout
 block content
     header.card-header
-        h4.card-title Welcome #{currentUser.firstname}
+        h4.card-title Welcome 
         |&nbsp
     div.form-row
         div.col.form-group.col-md-12    
             form.search(action='/register/userlist')
                 div.form-row
                     div.col-md-8
-                        input.form-control(name='gender' placeholder="Enter your search term ...")
+                        input.form-control(name='email' placeholder="Enter your search term(email) ...")
                     div.col-md-4
                         input.btn.btn-dark.btn-block(type="submit")
     table.table
@@ -30,7 +30,7 @@ block content
         tbody
             each user in users
                 tr
-                    td #{user.first_name}
+                    td #{user.username}
                     td #{user.last_name}
                     td #{user.company}
                     td #{user.email}
@@ -45,7 +45,7 @@ block content
                         form(method="post" action='/register/delete')
                             input(type="hidden", placeholder="", name="id", value=user._id)
                             button.btn.btn-dark.btn-block(type="submit") Delete
-    div.form-row
-            div.col-md-2.offset-9
-                form(method="post" action='/logout') 
-                    button.btn.btn-dark.btn-block(type="submit") Log out
+    //- div.form-row
+    //-         div.col-md-2.offset-9
+    //-             form(method="post" action='/logout') 
+    //-                 button.btn.btn-dark.btn-block(type="submit") Log out

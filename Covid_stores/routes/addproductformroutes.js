@@ -35,7 +35,7 @@ router.get('/addproduct', (req, res) => {
     console.log(req.file);
     // res.redirect('/');
     const addproductmodel = new Addproduct({
-      name: req.body.username,
+      username: req.body.username,
       make: req.body.make,
       category: req.body.category,
       date: req.body.date,
@@ -61,8 +61,8 @@ router.get('/addproduct', (req, res) => {
   router.get('/addproductform', async (req, res) => {
     try {
       let items = await Addproduct.find()
-      if (req.query.gender) {
-        items = await Addproduct.find({ gender: req.query.gender })
+      if (req.query.category) {
+        items = await Addproduct.find({ category: req.query.category })
       }
       //addproductform is for the PUG file.
       res.render('addproductform', { products: items })
@@ -78,6 +78,46 @@ router.get('/addproduct', (req, res) => {
     } catch (error) {
        res.status(400).send("unable to delete to database");
     }
+  })
+  
+
+  router.post('/addproduct/:id', upload.single('uploadimage'), async (req, res) => {
+    //outputs the form values in the console
+    console.log(req.body);
+    console.log(req.file);
+    // res.redirect('/');
+    const addproductmodel = new Addproduct({
+      username: req.body.username,
+      make: req.body.make,
+      category: req.body.category,
+      date: req.body.date,
+      serialnumber: req.body.serialnumber,
+      price: req.body.price,
+      initialpay: req.body.initialpay,
+      payinterval: req.body.payinterval,
+      productdescription: req.body.productdescription,
+      uploadimage: req.file.path,
+      color: req.body.color
+    });
+    try {
+      await addproductmodel.update()
+      // res.send('Thank you for your registration!');
+      console.log(req.body);
+      res.redirect('/addproduct/addproductformdup')
+  } catch (err) {
+      res.send('Sorry! Something went wrong.');
+      console.log(err);
+  }
+  })
+
+  router.get('/edit/:id', (req,res)=>{
+    Addproduct.findById(req.params.id, (errror, products) =>{
+      // res.render('admins/edit_agent',
+      // res.redirect('/cardpayment/cardpayment'
+      res.sendFile("addproductformdup.html", { root: view,
+        products:products
+      })
+    })
   })
   
   module.exports=router;

@@ -14,7 +14,7 @@ const addproductsSchema = new mongoose.Schema({
     uploadimage: String,
     color: String,
   });
-addproductsSchema.plugin(passportLocalMongoose, {
-  username: 'nameofitem'
+addproductsSchema.plugin(passportLocalMongoose,{
+  username: "nameofitem"
 });
 module.exports = mongoose.model('Addproduct', addproductsSchema); 

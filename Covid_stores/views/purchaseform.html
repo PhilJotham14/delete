@@ -24,42 +24,42 @@
         <section id="right">
             <h1>Purchase</h1>
             <!-- You named  it purchase idd so as not to confuse it with id. -->
-            <form id="purchaseidd" name="#" action="/purchase/purchase" method="POST">
+            <form id="purchaseidd" name="mydata" action="/purchase/purchase" method="POST">
                 <div id="form-card" class="form-field">
                     <label for="customername">Customer Name</label>
-                    <input id="customername" name="username" maxlength="15" placeholder="#" required>
+                    <input id="customername" name="username" maxlength="15" placeholder="Leo Moxley" required>
                     <label for="location">Location</label>
-                    <input id="location" name="location"  placeholder="#" required>
+                    <input id="location" name="location"  placeholder="Entebbe" required>
                 </div>
 
                 <div id="form-card" class="form-field">
                     <label for="phonenumber">Phone Number</label>
-                    <input id="phonenumber" name="phonenumber" type="number" maxlength="10" placeholder="#" required>
+                    <input id="phonenumber" name="phonenumber" type="number" maxlength="10" placeholder="0702832787" required>
                     <label for="email">Email</label>
-                    <input id="email" name="email" placeholder="#" required>
+                    <input id="email" name="email" placeholder="ferrer@gmail.com" required>
                 </div>
 
                 <div id="form-card" class="form-field">
                     <label for="initialpay">Initial Pay</label>
-                    <input id="initialpay" class="amountdecimal" name="initialpay" type="number" placeholder="#" required>
+                    <input id="initialpay" class="amountdecimal" onchange="setTwoNumberDecimal" name="initialpay" type="number" placeholder="0.00" value=".00" step="1000.00" required>
                     <label for="nationalid">National ID</label>
-                    <input id="nationalid" name="nationalid" maxlength="#" placeholder="#" required>
+                    <input id="nationalid" name="nationalid" maxlength="#" placeholder="THY231653YUT" required>
                 </div>
 
                 <div id="form-card" class="form-field">
                     <label for="itemname">Item Name</label>
-                    <input id="itemname" name="itemname" type="text" placeholder="#" required>
+                    <input id="itemname" name="itemname" type="text" placeholder="Cake" required>
                     <label for="serialnumber">Item Serial Number</label>
-                    <input id="serialnumber" name="serialnumber" maxlength="#" placeholder="#" required>
+                    <input id="serialnumber" name="serialnumber" maxlength="#" placeholder="" required>
                 </div>
 
                 <div id="form-card" class="form-field">
                     <label for="dateofpay">Date of Pay</label>
-                    <input id="dateofpay" name="dateofpay" type="text" placeholder="#" required>
+                    <input type="date" id="dateofpay" name="dateofpay" required>
                     <label for="nextdate">Next Date of Payment</label>
-                    <input id="nextdate" name="nextdate" maxlength="#" placeholder="#" required>
+                    <input type="date" id="date" name="nextdate" required>
                     <label for="amountnext">Amount Next Payable</label>
-                    <input id="amountnext" class="amountdecimal" name="amountnext" maxlength="#" placeholder="#" required>
+                    <input id="amountnext" class="amountdecimal" name="amountnext" type="number" step="1000.00" placeholder="0.00" required>
                 </div>
 
                 <div id="form-card" class="form-field">
@@ -69,11 +69,12 @@
                     <input id="receipt" name="receipt" maxlength="#" placeholder="#" required>
                 </div>
                 
-                <button type="submit">Submit</button>
+                <button type="submit"onclick="return validatepurchase()">Submit</button>
             </form>
         </section>
     </main>
 
+    <script src="/validatePurchase.js"></script>
     <script src="/purchaseform.js"></script>
 </body>
 </html>

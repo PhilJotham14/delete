@@ -22,4 +22,5 @@ router.post("/salessignup", async (req, res) => {
        console.log(err)
     }
   })
+
   module.exports=router;

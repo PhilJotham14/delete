@@ -1,19 +1,28 @@
 const express=require('express');
-const passport = require('passport');
 const router=express.Router();
+const passport = require('passport');
 
 var view = "./views/"
 
 //displays the Dashboardsignup page
 router.get('/managersignin', (req,res) => {
     // res.render('managersignin.html')
-    res.sendFile("managersignin.html", { root: view });
+    res.sendFile('managersignin.html', { root: view });
 })
 
-router.post("/managersignin",passport.authenticate('local'),(req, res) => {
-    req.session.user = req.user;
-    res.redirect('/dashboard/dashboard');
-});
+// router.post("/managersignin",passport.authenticate('local'),(req, res) => {
+//     req.session.user = req.user;
+//     res.redirect('/dashboard/dashboard');
+// });
+router.post('/managersignin', function(req, res, next){
+    passport.authenticate('local', {
+        successRedirect: '/dashboard/dashboard',
+        failureRedirect: '/managersignin/managersignin',
+        // failureFlash: true
+    })(req, res, next)
+})
+
+module.exports=router;
     // try {
     //   const items = new Managersignin(req.body);
     //   await Managersignin.register(items, req.body.password, (err) => {
@@ -45,4 +54,3 @@ router.post("/managersignin",passport.authenticate('local'),(req, res) => {
 //     }
 //     })
 
-    module.exports=router;

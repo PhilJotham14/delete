@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="/sign_in_form.css">
 </head>
 <body>
-    <form id="managersigni" name="mydata" action="/managersignin/managersignin" method="POST">
+    <form id="managersigni" name="mydata" action="#" method="POST">
     <div class="login-box">
         <h1>Login</h1>
         <div class="textbox">
@@ -16,9 +16,9 @@
         </div>
         <!-- <button type="submit" value="submit">Register</button> -->
         <!-- <input class="btn" type="button" placeholder="" name="" value="Sign In" onclick='validatesignin()'> -->
-        <button type="submit" class="btn" value="submit" >Sign In</button>
+        <a  class="btn" href='/registration/registration' value="submit" onclick='return validatesignin()'>Sign In</a>
     </div>
-    <!-- <script src="/public/validateSignIn.js"></script>onclick= 'validatesignin()' -->
+    <script src="/validateSignIn.js"></script>
 </form>
     
 </body>

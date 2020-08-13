@@ -19,7 +19,7 @@ router.get('/purchase', (req, res) => {
     try {
       await purchaseformmodel.save()
       // res.send('Thank you for your registration!');
-      res.redirect('/cart/cart')
+      res.redirect('/cardpayment/cardpayment')
   } catch (err) {
       res.send('Sorry! Something went wrong.');
       console.log(err);

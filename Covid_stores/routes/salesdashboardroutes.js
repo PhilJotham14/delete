@@ -1,7 +1,9 @@
 const express=require('express');
+const mongoose=require('mongoose');
 const router=express.Router();
 
 var view = "./views/"
+const Salessignup=require('../model/salessignupmodel')
 
 // router.get('/salesdashboard', (req, res) => {
 //     res.sendFile("salesdashboard.html", { root: view });
@@ -15,7 +17,7 @@ var view = "./views/"
       console.log('cannot find session')
     }
     })
-  
+    
 module.exports=router;
 // //registration
 // router.get('/registration', (req, res) => {

@@ -19,8 +19,10 @@ const managersigninformRoutes=require('./routes/managersigninroutes')
 const salessignupformRoutes=require('./routes/salessignuproutes')
 const salessigninformRoutes=require('./routes/salessigninroutes')
 const logoutprofileformRoutes=require('./routes/logoutprofileroutes')
+const Flash=require('connect-flash')
 
 const bodyParser= require('body-parser')
+
 
 const expressSession = require('express-session')({
   secret: 'secret',
@@ -42,6 +44,7 @@ const Salessignup=require('./model/salessignupmodel');
 const Purchase=require('./model/purchaseformmodel');
 const Cardpayment=require('./model/cardpaymentmodel');
 
+
 const app = express();
 
 //db
@@ -59,8 +62,6 @@ mongoose.connection
     console.log(`Connection error: ${err.message}`);
   });
 
-
-
 var view = "./views/"
 //calling html file in the view folder this helps in using html if you dont want to use Pug.
 // var view = "./views/";
@@ -74,11 +75,15 @@ app.set('views', './views');
 
 app.use(express.urlencoded({extended:true}))
 app.use(bodyParser.urlencoded({extended: true}))
+app.use(require('connect-flash')());   //Change later
+
 
 app.use(expressSession);
 
 app.use(express.static(path.join(__dirname, "public")));
 
+//Passport configs.
+require('./middleware/authenticate')(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -97,10 +102,10 @@ passport.use(Addproduct.createStrategy());
 passport.serializeUser(Addproduct.serializeUser());
 passport.deserializeUser(Addproduct.deserializeUser());
 
-//Manager Dashboard Sign up Passport configs
-passport.use(Managersignup.createStrategy());
-passport.serializeUser(Managersignup.serializeUser());
-passport.deserializeUser(Managersignup.deserializeUser());
+// Manager Dashboard Sign up Passport configs
+// passport.use(Managersignup.createStrategy());
+// passport.serializeUser(Managersignup.serializeUser());
+// passport.deserializeUser(Managersignup.deserializeUser());
 
 //Sales Agent Sign Up Dashboard Passport configs
 passport.use(Salessignup.createStrategy());
@@ -116,6 +121,12 @@ passport.deserializeUser(Purchase.deserializeUser());
 passport.use(Cardpayment.createStrategy());
 passport.serializeUser(Cardpayment.serializeUser());
 passport.deserializeUser(Cardpayment.deserializeUser());
+
+//Cart Form Passport configs
+passport.use(Cart.createStrategy());
+passport.serializeUser(Cart.serializeUser());
+passport.deserializeUser(Cart.deserializeUser());
+
 
 
 

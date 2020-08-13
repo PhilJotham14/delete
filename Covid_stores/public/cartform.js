@@ -1,7 +1,8 @@
 $(document).ready(function() {
 
     /* Set rates */
-    var taxRate = 0.05;
+    // var taxRate = 0.05;
+    var taxRate = 50/100;
     var fadeTime = 300;
  
     /* Assign actions */

@@ -20,8 +20,7 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="input">Name of the Item</label>
-              <input type="text" name="username" class="form-control" placeholder="" id="nameofitem">
-
+              <input type="text" name="username" class="form-control" placeholder="" id="username">
             </div>
             <div class="form-group col-md-6">
               <label for="input">Make</label>
@@ -33,9 +32,16 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="input">Category</label>
-                <input type="text" name="category" class="form-control" placeholder="" id="category">
-  
+                <!-- <input type="text" name="category" class="form-control" placeholder="" id="category"> -->
+                <select id="category" class="form-control"  name="category">
+                  <option value="furniture">Furniture</option>
+                  <option value="fitness kits">Fitness Kits</option>
+                  <option value="Machinery">Machinery</option>
+                  <option value="TV Sets">TV Sets</option>
+                  <option value="home theatre">Home Theatres</option>
+                </select>
               </div>
+              
 
               <div class="form-group col-md-6 input-group date" id="datetimepicker1">
               <label for="input" class="control-label">Date of Entry.</label>
@@ -60,15 +66,17 @@
                 <div class="form-group col-md-4">
                   <label for="input">Initial Pay</label>
                   <input type="number" name="initialpay" class="form-control" placeholder="" id="initialpay">
-    
                 </div>
               </div>
 
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="input">Pay Interval</label>
-                    <input type="number" name="payinterval" class="form-control" placeholder="" id="payinterval">
-      
+                    <!-- <input type="number" name="payinterval" class="form-control" placeholder="" id="payinterval"> -->
+                    <select id="payinterval" name="payinterval" class="form-control">
+                      <!-- <option value="Weekly">Weekly</option> -->
+                      <option value="Monthly">Monthly</option>
+                    </select>
                   </div>
                   <div class="form-group col-md-6">
                     <label for="input">Product Description</label>
@@ -87,9 +95,8 @@
               <div class="form-group col-md-6">
                 <label for="input">Color</label>
                 <input type="text" name="color" class="form-control" placeholder="" id="color">
-                <label>
-                <input type="radio" name="status">LTTP
-                </label>  
+                <label for="#">LTTP</label>
+                <input type="checkbox" id="" name="LTTP" value="LTTP">
               </div>
               </div>
 

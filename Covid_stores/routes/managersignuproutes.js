@@ -1,28 +1,60 @@
 const express=require('express');
 const mongoose=require('mongoose');
 const router=express.Router();
+const bcryptJs=require('bcryptjs');
+const authentication=require('../middleware/authen')
 
 var view = "./views/"
-require('../model/managersignupmodel')
-const Managersignup= mongoose.model('Managersignup');
+// require('../model/managersignupmodel')
+const Managersignup= require('../model/managersignupmodel');
+
 
 //displays the Dashboardsignup page
-router.get('/managersignup', (req,res) => {
+router.get('/managersignup', authentication,(req,res) => {
     res.sendFile('managersignup.html', { root: view });
 })
 
-router.post("/managersignup", async (req, res) => {
-    try {
-      const items = new Managersignup(req.body);
-      await Managersignup.register(items, req.body.password, (err) => {
-        if (err) { throw err }
-        res.redirect('/managersignin/managersignin')
+// router.post("/managersignup", async (req, res) => {
+//     try {
+//       const items = new Managersignup(req.body);
+//       await Managersignup.register(items, req.body.password, (err) => {
+//         if (err) { throw err }
+//         res.redirect('/managersignin/managersignin')
+//       })
+//     } catch (err) {
+//        res.status(400).send('Sorry! Something went wrong.')
+//        console.log(err)
+//     }
+//   })
+
+  router.post('/managersignup', authentication, async(req,res)=>{
+    const user = new Managersignup();
+    user.username=req.body.username
+    user.password=req.body.password
+    try{
+      await bcryptJs.genSalt(10,(err,salt)=>{
+        bcryptJs.hash(user.password,salt,(err,hash)=>{
+          if(err){
+            // res.redirect('/managersignin/managersignin')
+            console.log(err)
+          }else{
+            user.password=hash;
+            user.save((err,result)=>{
+              if(err){
+                console.log(err)
+              }else{
+                console.log(result)
+              }
+            });
+          }
+        })
       })
-    } catch (err) {
-       res.status(400).send('Sorry! Something went wrong.')
-       console.log(err)
+    }catch(err){
+      res.status(400).send('Sorry! Something went wrong.')
+      console.log(err)
     }
   })
+
   
   module.exports=router;
 
