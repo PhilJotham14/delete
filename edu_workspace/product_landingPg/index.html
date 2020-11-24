@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap/css/bootstrap.min.css"> 
+    <title>Product Landing Page</title>
+  </head>
+ 
+  <body>
+    <div w3-include-html="./includes/nav.html"></div>
+    <header id="header"> PRODUCT LANDING PAGE</header>
+    <img src="./img/animashan.jpg" id="header-img" class="marginauto" alt="logo">
+
+    <!-- <header id="header"> ...PRODUCT VIDEO ADVERTISEMENT... 
+        <video width="320" height="240" controls class="marginautovid" id="productvid">
+            <source src="./img/vidx.mp4" type="video/mp4">
+        </video>
+    </header> -->
+
+    <header id="header"> ...PRODUCT VIDEO ADVERTISEMENT... 
+      <div class="embed-responsive embed-responsive-16by9 marginautovid" id="productvid">
+        <iframe class="embed-responsive-item" src="./img/vidx.mp4" allowfullscreen></iframe>
+      </div>
+   </header>
+
+    <div class="card-deck">
+      <div class="card">
+        <img src="./img/fruit.jpg" class="card-img-top" alt="fruit cake">
+        <div class="card-body">
+          <h5 class="card-title">Fruit Cake</h5>
+          <p class="card-text">This is a well balanced coated levett sweet tremendous cake.</p>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="btn btn-primary">SELECT</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./img/strawberry.jpg" class="card-img-top" alt="strawberry cake">
+        <div class="card-body">
+          <h5 class="card-title">Strawberry Cake</h5>
+          <p class="card-text">Tasty with a strawberry natural inclusive flavored ingredient.</p>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="btn btn-primary">SELECT</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./img/choco.jpeg" class="card-img-top" alt="chocolate cake">
+        <div class="card-body">
+          <h5 class="card-title">Chocolate Cake</h5>
+          <p class="card-text">Tasty with a natural flavor of chocolate ingredient.</p>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="btn btn-primary">SELECT</a>
+        </div>
+      </div>
+    </div>
+
+    <form name="mydata" action="#" method="#" class="text-center">
+        <div class="contactus" id="contactus">
+          <h1 class="title">Email Input</h1>
+          <div class="form_wrapper">
+            <div class="form_input">
+              <input type="email" placeholder="Email" id="email" name="email" required>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit</button>
+          </div>
+        </div>
+    </form>
+
+    <footer>
+      <ul>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </ul>
+      <span>&copy; | PHIL &#169; </span>
+    </footer>
+
+        <!-- Bootstrap being added to js -->
+        <script src="./js/bootstrap/js/jquery-3.5.1.slim.min.js"></script>
+        <script src="./js/bootstrap/js/popper.min.js"></script>
+        <script src="./js/bootstrap/js/bootstrap.js"></script>
+        <!-- Top navigation bar -->
+        <script src="./includes/nav.js"></script>
+  </body>
+</html>
